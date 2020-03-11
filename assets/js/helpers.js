@@ -44,7 +44,14 @@ function ki_encode(dec_number)
 
 function ki_decode(simbolo)
 {
-    return getKeyByValue(simbolos, simbolo)
+    return getKeyByValue(simbolos, simbolo);
+}
+
+
+function ki_decodeNOVO(simbolo)
+{
+    var valorVigesimal = getKeyByValue(simbolos, simbolo);
+    return toDecimal(valorVigesimal);
 }
 
 // ----------------------------------------------
@@ -83,7 +90,7 @@ function isNegative(st_term)
 function toDecimal(decimal)
 {
     var vigesimal = decimal.toString(20);
-    return parseFloat(vigesimal, 20);
+    return parseInt(vigesimal, 20); // parseFloat dá erro
 }
 
 function toVigesimal(decimal)
